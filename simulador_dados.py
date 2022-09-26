@@ -16,17 +16,15 @@ class SimuladorDados:
 
     def Iniciar(self):
         #criação da Janela
-        self.janela = sg.Window('Simulador de Dado', Layout=self.layout)
+        self.janela = sg.Window('Simulador de Dado', layout=self.layout)
         #Leitura dos valores da tela
         self.evento, self.valores = self.janela.Read()
         # fazer alguma coisa com esses valores    
         try:
-            if self.evento == 'sim' or self.evento == 's':
+            if self.evento == 'sim':
                 self.ValorDoDado()
-            elif self.evento == 'nao' or self.evento == 'n': 
+            elif self.evento == 'nao':
                 print('Agradecemos sua participação!')
-            else:
-                print('Favor digitar sim ou não')
         except:
             print('Ocorreu um erro ao receber sua resposta.')
 
